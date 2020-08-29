@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'users/show'
+  get 'users/new'
+  get 'users/create'
   get 'toppages/index'
   get 'sessions/new'
   get 'sessions/create'
@@ -12,4 +16,5 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new'
   resources :tasks
+  resources :users, only: [:index, :show, :new, :create]
 end
